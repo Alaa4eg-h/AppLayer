@@ -242,6 +242,7 @@ header {
 .banner-text {
     flex: 0 0 50%;
     color: #fff;
+    margin-right: 2rem;
 }
 
 .banner-heading {
@@ -257,6 +258,7 @@ header {
 
 .banner-img {
     position: relative;
+    flex: 0 0 50%;
 }
 
 .banner-img img {
@@ -398,6 +400,20 @@ header {
     justify-content: space-evenly;
     flex-direction: column;
     padding: 2rem;
+    flex: 0 0 30%;
+}
+
+.about-middle {
+    flex: 0 0 35%;
+}
+
+.about-middle img {
+    width: 100%;
+}
+
+.about-content .about-single {
+    padding: 1rem;
+    margin-bottom: 3rem;
 }
 
 /* START ABOUT STYLES */
@@ -538,6 +554,7 @@ header {
 
 .explore .steps-items .step {
     margin-bottom: 3rem;
+    padding: 2rem;
 }
 
 .explore .steps-items .step:last-child {
@@ -550,9 +567,6 @@ header {
 
 /* END EXPLORE STYLES */
 /* START FAQ STYLES */
-.faq-content {
-    display: flex;
-}
 
 .faq-content .title {
     font-size: 1.8rem;
@@ -732,5 +746,74 @@ header {
 }
 
 
+@media screen and (max-width: 992px) {
+    .banner .flex {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .banner-text {
+        flex: 0 0 100%;
+    }
+
+    .banner-img {
+        flex: 0 0 auto;
+        margin-left: auto;
+        bottom: -7rem;
+    }
+
+    .clients .flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .client-logo-wrap {
+        flex: 0 0 30%;
+    }
+
+    .section-heading {
+        width: 100%;
+    }
+
+
+    .features .flex {
+        flex-wrap: wrap;
+    }
+
+
+    .features-items .item {
+        margin-bottom: 3rem;
+    }
+
+    .about .flex {
+        flex-direction: column;
+    }
+
+    .testi-cards {
+        width: 80%;
+    }
+
+    .explore .flex {
+        flex-direction: column;
+    }
+
+    .faq .flex {
+        flex-direction: column;
+    }
+
+    .faq-content .accordion {
+        margin-bottom: 3rem;
+    }
+
+    .download.flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .download .app-btn:first-of-type {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
 
 /* END RESPONSIVE STYLES */
