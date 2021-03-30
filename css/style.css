@@ -225,6 +225,23 @@ header {
     opacity: 1;
 }
 
+.header .toggler-menu {
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.header .toggler-menu .bar {
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.header .toggler-menu .bar:not(:last-child) {
+    margin-bottom: 5px;
+}
+
 /* END HEADER STYLES */
 
 /* START BANNER STYLES */
@@ -233,6 +250,7 @@ header {
     background-size: cover;
     position: relative;
     object-fit: cover;
+    padding: 150px 0;
 }
 
 .banner .container {
@@ -491,8 +509,8 @@ header {
 }
 
 .testi .testi-control {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-color: #fff;
     opacity: 0.15;
@@ -714,7 +732,7 @@ header {
 
 /* START RESPONSIVE STYLES */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     .banner-text {
         flex: 0 0 50%;
     }
@@ -742,11 +760,23 @@ header {
 
     .download.flex {
         justify-content: start;
+        flex-wrap: wrap;
     }
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
+
+    .main-nav {
+        display: none;
+    }
+
+    .header .toggler-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
     .banner .flex {
         flex-wrap: wrap;
         justify-content: space-between;
@@ -754,6 +784,10 @@ header {
 
     .banner-text {
         flex: 0 0 100%;
+    }
+
+    .banner-heading {
+        font-size: 6rem;
     }
 
     .banner-img {
@@ -783,7 +817,13 @@ header {
 
     .features-items .item {
         margin-bottom: 3rem;
+        flex: 0 0 80%;
+        margin: 0 auto 3rem auto !important;
     }
+
+    /* .features-items .item:last-child {
+        margin-right: 0;
+    } */
 
     .about .flex {
         flex-direction: column;
@@ -815,5 +855,62 @@ header {
         margin-bottom: 2rem;
     }
 }
+
+
+@media screen and (max-width:767px) {
+    .banner-heading {
+        font-size: 5rem;
+    }
+
+    .client-logo-wrap {
+        flex: 0 0 40%;
+    }
+
+    .testi-cards {
+        width: 100%;
+    }
+
+    .testi .control-left,
+    .testi .control-right {
+        display: none;
+    }
+
+    .download.flex {
+        flex-direction: row;
+    }
+
+    .download .app-btn:first-of-type {
+        margin-right: 2rem;
+    }
+
+    .footer-item {
+        flex: 0 0 100%;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .banner-heading {
+        font-size: 4rem;
+    }
+
+    .section-heading h2 {
+        font-size: 4rem;
+    }
+
+    .features-items .item {
+        flex: 0 0 100%;
+    }
+
+    .copyright.flex {
+        flex-direction: column;
+    }
+
+    .copyright .copy {
+        margin-bottom: 1.2rem;
+    }
+}
+
+
+@media screen and (max-width: 372px) {}
 
 /* END RESPONSIVE STYLES */
