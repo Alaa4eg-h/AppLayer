@@ -64,9 +64,42 @@ h3 {
 /* START HELPER CLASSES */
 .container {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1.5rem;
 }
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
 
 .flex {
     display: flex;
@@ -198,7 +231,6 @@ header {
 .banner {
     background: url(../img/hero/hero-bg.svg) no-repeat bottom left;
     background-size: cover;
-    height: 110vh;
     position: relative;
     object-fit: cover;
 }
@@ -208,7 +240,7 @@ header {
 }
 
 .banner-text {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     color: #fff;
 }
 
@@ -225,40 +257,46 @@ header {
 
 .banner-img {
     position: relative;
-    width: 400px;
-    height: 100%;
-    top: 50px;
 }
 
 .banner-img img {
-    position: absolute;
+    position: relative;
+    text-align: right;
 }
 
 .banner-img img:first-of-type {
-    z-index: 3;
-    right: 0;
+    position: relative;
+    z-index: 5;
 }
 
 .banner-img img:nth-child(2) {
-    z-index: 2;
-    left: -50px;
-    top: -100px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
 }
 
 .banner-img img:last-of-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     z-index: 1;
-    left: -150px;
-    top: -120px;
 }
+
 
 /* END BANNER STYLES */
 /* START CLIENTS STYLES */
-
 
 .client-logo {
     opacity: 0.6;
     transition: all 0.3s ease;
     margin-right: 3rem;
+    width: 100%;
+}
+
+.client-logo-wrap {
+    width: calc(100% / 5 - 1.5rem);
+    padding: 0.5rem;
 }
 
 .client-logo:last-child {
@@ -475,6 +513,11 @@ header {
 
 .explore-img {
     margin-right: 3rem;
+    flex: 0 0 50%;
+}
+
+.explore-img img {
+    width: 100%;
 }
 
 .explore .section-heading {
@@ -487,11 +530,18 @@ header {
 }
 
 .explore .steps-items {
-    height: 80%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+}
+
+.explore .steps-items .step {
+    margin-bottom: 3rem;
+}
+
+.explore .steps-items .step:last-child {
+    margin-bottom: 0;
 }
 
 .explore .steps-items h3 {
@@ -510,7 +560,6 @@ header {
 
 .faq-content .accordion {
     margin-right: 3rem;
-    flex: 0 0 40%;
 }
 
 .faq-content .single-faq {
@@ -550,6 +599,15 @@ header {
     transition: all 0.3s ease;
 }
 
+
+.faq-img {
+    flex: 0 0 50%;
+}
+
+.faq-img img {
+    width: 100%;
+}
+
 /* END FAQ STYLES */
 
 /* START FOOTER STYLES */
@@ -569,6 +627,10 @@ header {
     padding-left: 8px;
 }
 
+.footer .title:last-of-type {
+    padding-left: 0;
+}
+
 .footer .link {
     font-size: 1.6rem;
     color: #fff;
@@ -580,6 +642,7 @@ header {
     justify-content: space-between;
     color: #000;
     font-family: 'Heebo', sans-serif;
+    padding: 1.2rem 2rem;
 }
 
 .download .app-btn:first-of-type {
@@ -634,3 +697,40 @@ header {
 
 
 /* END FOOTER STYLES */
+
+/* START RESPONSIVE STYLES */
+
+@media screen and (max-width: 1200px) {
+    .banner-text {
+        flex: 0 0 50%;
+    }
+
+    .banner-heading {
+        font-size: 4.8rem;
+    }
+
+    .section-heading {
+        width: 60%;
+    }
+
+    .testi-cards {
+        width: 60%;
+    }
+
+    .footer-item {
+        flex: 0 0 50%;
+        margin-bottom: 3rem;
+    }
+
+    .footer-content.flex {
+        flex-wrap: wrap;
+    }
+
+    .download.flex {
+        justify-content: start;
+    }
+}
+
+
+
+/* END RESPONSIVE STYLES */
