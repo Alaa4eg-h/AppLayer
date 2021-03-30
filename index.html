@@ -19,10 +19,16 @@
 
 <body>
     <!-- START HEADER -->
-    <header class="header flex">
+    <header class="header flex" id="home">
         <div class="container flex">
             <div class="logo">
                 <img src="./img/logo/logo.svg" alt="" class="logo-img">
+            </div>
+            <!-- TOGGLER MENU -->
+            <div class="toggler-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
             <!-- START NAV -->
             <nav class="main-nav">
@@ -34,7 +40,7 @@
                         <a href="#features" class="nav-link">Features</a>
                     </li>
                     <li class="list-item">
-                        <a href="#About" class="nav-link">About</a>
+                        <a href="#about" class="nav-link">About</a>
                     </li>
                     <li class="list-item">
                         <a href="#testimonials" class="nav-link">Testimonials</a>
@@ -43,15 +49,10 @@
                         <a href="#explore" class="nav-link">Explore</a>
                     </li>
                     <li class="list-item">
-                        <a href="#foq" class="nav-link">FAQ</a>
+                        <a href="#faq" class="nav-link">FAQ</a>
                     </li>
                 </ul>
             </nav>
-            <div class="toggler-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </div>
     </header>
     <!-- END HEADER -->
@@ -74,7 +75,7 @@
     </section>
     <!-- END BANNER -->
     <!-- START CLIENTS -->
-    <section class="clients">
+    <section class="clients" id="clients">
         <div class="container">
             <div class="clients-logos flex">
                 <div class="client-logo-wrap">
@@ -98,7 +99,7 @@
     </section>
     <!-- END CLIENTS -->
     <!-- START FEATURES -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="section-heading">
                 <h2>Awesome Features</h2>
@@ -152,7 +153,7 @@
     <!-- END FEATURES -->
 
     <!-- START ABOUT -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="section-heading">
                 <h2>Different Types Of Departments
@@ -206,7 +207,7 @@
     <!-- END ABOUT -->
 
     <!-- START TESTI -->
-    <section class="testi">
+    <section class="testi" id="testimonials">
         <div class="container">
             <div class="section-heading">
                 <h2>What Our Client Says
@@ -251,7 +252,7 @@
     </section>
     <!-- END TESTI -->
     <!-- START EXPLORE -->
-    <section class="explore">
+    <section class="explore" id="explore">
         <div class="container">
             <div class="explore-content flex">
                 <div class="explore-img">
@@ -290,7 +291,7 @@
     <!-- END EXPLORE -->
 
     <!-- START FAQ -->
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="container">
             <div class="section-heading">
                 <h2>Frequently Asked Queries
@@ -437,6 +438,10 @@
         </div>
     </footer>
     <!-- END FOOTER -->
+
+
+    <!-- MAIN JS  -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
