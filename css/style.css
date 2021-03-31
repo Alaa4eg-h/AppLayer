@@ -184,6 +184,7 @@ section {
 .header.scroll {
     background-color: #fff;
     height: 80px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header.scroll .nav-link {
@@ -191,6 +192,11 @@ section {
 }
 
 .header.scroll .nav-link::before {
+    background-color: #487cff;
+}
+
+
+.header.scroll .toggler-menu .bar {
     background-color: #487cff;
 }
 
@@ -823,8 +829,6 @@ section {
 
 
 @media screen and (max-width: 991px) {
-
-
     .header .toggler-menu {
         display: flex;
         flex-direction: column;
