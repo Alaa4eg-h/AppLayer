@@ -9,7 +9,15 @@ const card = document.querySelectorAll('.card');
 const accordion = document.querySelector('.accordion');
 const faq = document.querySelectorAll('.single-faq');
 const backToTop = document.querySelector('.back');
+const section = document.querySelectorAll('section');
+const loader = document.querySelector('.loader-overlay');
 
+
+// REMOVE LOADER WHEN PAGE LOADED
+window.addEventListener('load', () => {
+    loader.classList.add('loaded');
+    document.body.style.overflowY = 'scroll';
+}, 3000)
 
 
 // ADD/REMOVE CLASS "OPEN-MENU" WHEN CLICKING TOGGELER MENU
@@ -22,8 +30,8 @@ window.addEventListener('resize', () => {
         header.classList.remove('menu-open');
     }
 })
-
 const logoImgSrc = logoImg.getAttribute('src');
+
 // ADD/REMOVE CLASS "SCROLLED" TO HEADER WHEN SCROLLING
 window.addEventListener('scroll', () => {
     const logoImgSrcN = logoImgSrc.replace("logo.svg", "logo-2.svg");
@@ -36,9 +44,22 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scroll');
         logoImg.setAttribute('src', logoImgSrc);
     }
+    const position = window.offsetTop || document.documentElement.scrollTop
+        || document.body.scrollTop;
+
+    navLink.forEach((link) => {
+        let currLink = link;
+        let linkHref = currLink.getAttribute('href');
+        let elements = document.querySelector(linkHref);
+        if (elements.offsetTop <= position &&
+            (elements.offsetTop + elements.offsetHeight > position)) {
+            document.querySelector('.nav-link').classList.remove('active');
+            currLink.classList.add('active');
+        } else {
+            currLink.classList.remove('active');
+        }
+    })
 })
-
-
 // ADD SMOOTH SCROLLING WHEN SELECT THE NAV LINK
 // FIRST ADD CLICK EVENT TO ALL LINKS
 navLink.forEach((link) => {
@@ -55,6 +76,7 @@ navLink.forEach((link) => {
         navList.querySelector('.active').classList.remove('active');
         link.classList.add('active');
     })
+
 })
 
 // LOOP THROW FAQ ACCORDION 
@@ -80,9 +102,7 @@ function startSlider() {
     card[0].style.display = "block";
 }
 startSlider();
-
 let current = 0;
-
 // prevBtn
 function slideLeft() {
 
@@ -90,10 +110,8 @@ function slideLeft() {
     card[current - 1].style.display = "block";
     current--;
 }
-
 // nextBtn
 function slideRight() {
-
     reset();
     card[current + 1].style.display = "block";
     current++;
@@ -108,7 +126,6 @@ prevBtn.addEventListener('click', function () {
 })
 
 nextBtn.addEventListener('click', function () {
-
     if (current === card.length - 1) {
         current = -1;
     }
@@ -125,5 +142,9 @@ window.addEventListener('scroll', function () {
 
 // SCROLL TO TOP 
 backToTop.addEventListener('click', () => {
-    document.body.scrollTop = 0;
+    const headerOffset = document.querySelector('.header').offsetTop;
+    scroll({
+        top: headerOffset,
+        behavior: 'smooth'
+    });
 })
