@@ -1093,6 +1093,10 @@ section {
     .banner-img {
         display: none;
     }
+
+    .testi .card-icon {
+        right: 20px;
+    }
 }
 
 /* END RESPONSIVE STYLES */
