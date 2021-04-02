@@ -170,7 +170,15 @@ section {
 }
 
 .loaded {
+    -webkit-animation: disapper 0.3s forwards;
     animation: disapper 0.3s forwards;
+}
+
+@-webkit-keyframes disapper {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 @keyframes disapper {
@@ -749,6 +757,7 @@ section {
 
 .faq-content .single-faq.active .icon {
     transform: rotate(-180deg);
+    color: #487cff;
 }
 
 .faq-content .single-faq:last-child {
@@ -854,8 +863,8 @@ section {
     font-size: 2rem;
     cursor: pointer;
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: 5%;
+    bottom: 5%;
     z-index: 100;
     transition: all 0.5s ease;
 }
@@ -994,10 +1003,6 @@ section {
         margin: 0 auto 3rem auto !important;
     }
 
-    /* .features-items .item:last-child {
-        margin-right: 0;
-    } */
-
     .about .flex {
         flex-direction: column;
     }
@@ -1084,6 +1089,10 @@ section {
 }
 
 
-@media screen and (max-width: 372px) {}
+@media screen and (max-width: 372px) {
+    .banner-img {
+        display: none;
+    }
+}
 
 /* END RESPONSIVE STYLES */
